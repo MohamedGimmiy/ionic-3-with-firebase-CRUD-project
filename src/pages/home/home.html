@@ -1,17 +1,32 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Persons DataBase</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h2>Welcome to Persons Database !</h2>
+  <ion-list>
+      <ion-item-sliding *ngFor="let person of p ">
+        <ion-item>
+          <ion-thumbnail item-start>
+              <img src="/assets/imgs/person-icon.png">
+          </ion-thumbnail>
+          <h2>{{ person.fname }}</h2>
+          <p> lastName: {{person.lname}} - 
+            age : {{person.age}} -
+            department : {{person.dept}} </p>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="primary">
+            <ion-icon name="text"></ion-icon>
+            Text
+          </button>
+          <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+            Call
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list> 
 </ion-content>
